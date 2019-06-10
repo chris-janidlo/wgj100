@@ -5,10 +5,16 @@ using UnityEngine;
 
 public class MatchManager : MonoBehaviour
 {
-    public Board Board;
+    public Board Board { get; private set; }
     public float SlideDelay;
 
-    IEnumerator Start ()
+    void Awake ()
+    {
+        Board = new Board();
+        StartCoroutine(loopRoutine());
+    }
+
+    IEnumerator loopRoutine ()
     {
         while (true)
         {

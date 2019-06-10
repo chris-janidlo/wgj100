@@ -2,13 +2,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using crass;
 
-[Serializable]
 public class Board
 {
     public const int BoardSideLength = 6;
     public const int MinMatchingBlocks = 4;
+
+    public UnityEvent StateChanged;
 
     // origin at bottom left
     public Block[,] State = new Block[BoardSideLength, BoardSideLength];
@@ -33,6 +35,9 @@ public class Board
         bagTwo = new BlockBag();
         bagTwo.Items = blocks;
         bagTwo.AvoidRepeats = true;
+
+        spawnNewPieces();
+        StateChanged = new UnityEvent();
     }
 
     public void Slide (BoardInput input)
@@ -61,6 +66,7 @@ public class Board
 
         clearMatches();
         spawnNewPieces();
+        StateChanged.Invoke();
     }
 
     // TODO: animation
@@ -89,14 +95,15 @@ public class Board
         };
 
         int firstSpawnIndex, diagonalIndex;
-        Vector2Int spawnOne, spawnTwo;
+        Vector2Int spawnOne, diagonal, spawnTwo;
 
         firstSpawnIndex = UnityEngine.Random.Range(0, spawnLocations.Count);
         diagonalIndex = (firstSpawnIndex + 2) % 4;
+        diagonal = spawnLocations[diagonalIndex];
 
         spawnOne = spawnLocations[firstSpawnIndex];
-        spawnLocations.RemoveAt(Mathf.Min(firstSpawnIndex, diagonalIndex));
-        spawnLocations.RemoveAt(Mathf.Max(firstSpawnIndex, diagonalIndex));
+        spawnLocations.Remove(spawnOne);
+        spawnLocations.Remove(diagonal);
         spawnTwo = spawnLocations.PickRandom();
 
         if (State[spawnOne.x, spawnOne.y] != null || State[spawnTwo.x, spawnTwo.y] != null)
@@ -122,13 +129,13 @@ public class Board
     // TODO: generalize
     void slideBoardUp ()
     {
-        for (int y = BoardSideLength - 1; y >= 0; y--)
+        for (int y = BoardSideLength - 2; y >= 0; y--)
         {
-            for (int x = 0; x <= BoardSideLength; x++)
+            for (int x = 0; x < BoardSideLength; x++)
             {
                 Vector2Int pos = new Vector2Int(x, y), newPos = pos;
                 
-                while (newPos.y < BoardSideLength && State[newPos.x, newPos.y + 1] == null)
+                while (newPos.y < BoardSideLength - 1 && State[newPos.x, newPos.y + 1] == null)
                 {
                     newPos += Vector2Int.up;
                 }
@@ -141,9 +148,9 @@ public class Board
     // TODO: generalize
     void slideBoardDown ()
     {
-        for (int y = 1; y <= BoardSideLength; y++)
+        for (int y = 1; y < BoardSideLength; y++)
         {
-            for (int x = 0; x <= BoardSideLength; x++)
+            for (int x = 0; x < BoardSideLength; x++)
             {
                 Vector2Int pos = new Vector2Int(x, y), newPos = pos;
                 
@@ -160,9 +167,9 @@ public class Board
     // TODO: generalize
     void slideBoardLeft ()
     {
-        for (int x = 1; x <= BoardSideLength; x++)
+        for (int x = 1; x < BoardSideLength; x++)
         {
-            for (int y = 0; y <= BoardSideLength; y++)
+            for (int y = 0; y < BoardSideLength; y++)
             {
                 Vector2Int pos = new Vector2Int(y, x), newPos = pos;
                 
@@ -181,7 +188,7 @@ public class Board
     {
         for (int x = BoardSideLength - 1; x >= 0; x--)
         {
-            for (int y = 0; y <= BoardSideLength; y++)
+            for (int y = 0; y < BoardSideLength; y++)
             {
                 Vector2Int pos = new Vector2Int(y, x), newPos = pos;
                 
@@ -200,9 +207,9 @@ public class Board
         List<Vector2Int> visited = new List<Vector2Int>();
         List<List<Vector2Int>> matches = new List<List<Vector2Int>>();
         
-        for (int x = 0; x <= BoardSideLength; x++)
+        for (int x = 0; x < BoardSideLength; x++)
         {
-            for (int y = 0; y <= BoardSideLength; x++)
+            for (int y = 0; y < BoardSideLength; y++)
             {
                 if (State[x, y] == null) continue;
 
@@ -228,12 +235,26 @@ public class Board
 
         BlockType currentType = State[position.x, position.y].Type;
 
-        List<Vector2Int> adjacentPositions = new List<Vector2Int>
+        List<Vector2Int> adjacentPositions = new List<Vector2Int>();
+
+        if (position.x > 0)
         {
-            new Vector2Int(position.x, position.y + 1),
-            new Vector2Int(position.x, position.y - 1),
-            new Vector2Int(position.x - 1, position.y),
-            new Vector2Int(position.x + 1, position.y)
+            adjacentPositions.Add(new Vector2Int(position.x - 1, position.y));
+        }
+
+        if (position.y > 0)
+        {
+            adjacentPositions.Add(new Vector2Int(position.x, position.y - 1));
+        }
+
+        if (position.x < BoardSideLength - 1)
+        {
+            adjacentPositions.Add(new Vector2Int(position.x + 1, position.y));
+        }
+
+        if (position.y < BoardSideLength - 1)
+        {
+            adjacentPositions.Add(new Vector2Int(position.x, position.y + 1));
         };
 
         foreach (var pos in adjacentPositions)
