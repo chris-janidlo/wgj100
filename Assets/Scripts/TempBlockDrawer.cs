@@ -26,6 +26,11 @@ public class TempBlockDrawer : MonoBehaviour
                 Block block = board.State[x, y];
                 RectTransform cell = Cells[x + y * Board.BoardSideLength];
 
+                if (cell.childCount > 0)
+                {
+                    Destroy(cell.GetChild(0).gameObject);
+                }
+
                 if (block != null)
                 {
                     Image prefab = null;
@@ -47,10 +52,6 @@ public class TempBlockDrawer : MonoBehaviour
                     }
 
                     Instantiate(prefab).transform.SetParent(cell, false);
-                }
-                else if (cell.childCount > 0)
-                {
-                    Destroy(cell.GetChild(0).gameObject);
                 }
             }
         }

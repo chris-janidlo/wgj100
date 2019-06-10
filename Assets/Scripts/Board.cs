@@ -66,6 +66,7 @@ public class Board
 
         clearMatches();
         spawnNewPieces();
+        clearMatches();
         StateChanged.Invoke();
     }
 
@@ -109,6 +110,7 @@ public class Board
         if (State[spawnOne.x, spawnOne.y] != null || State[spawnTwo.x, spawnTwo.y] != null)
         {
             // TODO: die
+            Debug.Log("death");
             return;
         }
 
@@ -129,7 +131,7 @@ public class Board
     // TODO: generalize
     void slideBoardUp ()
     {
-        for (int y = BoardSideLength - 2; y >= 0; y--)
+        for (int y = BoardSideLength - 1; y >= 0; y--)
         {
             for (int x = 0; x < BoardSideLength; x++)
             {
@@ -148,7 +150,7 @@ public class Board
     // TODO: generalize
     void slideBoardDown ()
     {
-        for (int y = 1; y < BoardSideLength; y++)
+        for (int y = 0; y < BoardSideLength; y++)
         {
             for (int x = 0; x < BoardSideLength; x++)
             {
@@ -167,11 +169,11 @@ public class Board
     // TODO: generalize
     void slideBoardLeft ()
     {
-        for (int x = 1; x < BoardSideLength; x++)
+        for (int x = 0; x < BoardSideLength; x++)
         {
             for (int y = 0; y < BoardSideLength; y++)
             {
-                Vector2Int pos = new Vector2Int(y, x), newPos = pos;
+                Vector2Int pos = new Vector2Int(x, y), newPos = pos;
                 
                 while (newPos.x > 0 && State[newPos.x - 1, newPos.y] == null)
                 {
@@ -190,9 +192,9 @@ public class Board
         {
             for (int y = 0; y < BoardSideLength; y++)
             {
-                Vector2Int pos = new Vector2Int(y, x), newPos = pos;
+                Vector2Int pos = new Vector2Int(x, y), newPos = pos;
                 
-                while (newPos.x < BoardSideLength && State[newPos.x + 1, newPos.y] == null)
+                while (newPos.x < BoardSideLength - 1 && State[newPos.x + 1, newPos.y] == null)
                 {
                     newPos += Vector2Int.right;
                 }

@@ -6,27 +6,20 @@ using UnityEngine;
 public class MatchManager : MonoBehaviour
 {
     public Board Board { get; private set; }
-    public float SlideDelay;
 
     void Awake ()
     {
         Board = new Board();
-        StartCoroutine(loopRoutine());
     }
 
-    IEnumerator loopRoutine ()
+    void Update ()
     {
-        while (true)
+        foreach (BoardInput inputDir in Enum.GetValues(typeof(BoardInput)))
         {
-            foreach (BoardInput inputDir in Enum.GetValues(typeof(BoardInput)))
+            if (Input.GetButtonDown(inputDir.ToString()))
             {
-                if (Input.GetButtonDown(inputDir.ToString()))
-                {
-                    Board.Slide(inputDir);
-                    yield return new WaitForSeconds(SlideDelay);
-                }
+                Board.Slide(inputDir);
             }
-            yield return null;
         }
     }
 }
