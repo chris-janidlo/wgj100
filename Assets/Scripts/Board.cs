@@ -85,7 +85,7 @@ public class Board
     void spawnNewPieces ()
     {
         // assuming board dimensions are even
-        int lowerMid = BoardSideLength / 2, upperMid = lowerMid + 1;
+        int lowerMid = BoardSideLength / 2 - 1, upperMid = lowerMid + 1;
 
         List<Vector2Int> spawnLocations = new List<Vector2Int>
         {
