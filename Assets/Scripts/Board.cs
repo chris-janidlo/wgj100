@@ -16,19 +16,19 @@ public class Board
     {
         switch (input)
         {
-            case BoardInput.Up:
+            case BoardInput.SlideUp:
                 slideBoardUp();
                 break;
 
-            case BoardInput.Down:
+            case BoardInput.SlideDown:
                 slideBoardDown();
                 break;
 
-            case BoardInput.Left:
+            case BoardInput.SlideLeft:
                 slideBoardLeft();
                 break;
 
-            case BoardInput.Right:
+            case BoardInput.SlideRight:
                 slideBoardRight();
                 break;
 
@@ -193,5 +193,5 @@ public class Board
 
 public enum BoardInput
 {
-    Up, Down, Left, Right
+    SlideUp, SlideDown, SlideLeft, SlideRight
 }
