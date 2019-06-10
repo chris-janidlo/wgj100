@@ -7,6 +7,11 @@ using UnityEngine;
 public class Block
 {
     public BlockType Type;
+
+    public Block (BlockType type)
+    {
+        Type = type;
+    }
 }
 
 public enum BlockType

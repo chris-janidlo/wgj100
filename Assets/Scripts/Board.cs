@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using crass;
 
 [Serializable]
 public class Board
@@ -11,6 +12,28 @@ public class Board
 
     // origin at bottom left
     public Block[,] State = new Block[BoardSideLength, BoardSideLength];
+
+    class BlockBag : BagRandomizer<BlockType> {}
+
+    BlockBag bagOne, bagTwo;
+
+    public Board ()
+    {
+        List<BlockType> blocks = new List<BlockType>();
+
+        foreach (BlockType blockType in Enum.GetValues(typeof(BlockType)))
+        {
+            blocks.Add(blockType);
+        }
+
+        bagOne = new BlockBag();
+        bagOne.Items = blocks;
+        bagOne.AvoidRepeats = true;
+
+        bagTwo = new BlockBag();
+        bagTwo.Items = blocks;
+        bagTwo.AvoidRepeats = true;
+    }
 
     public void Slide (BoardInput input)
     {
@@ -37,6 +60,7 @@ public class Board
         }
 
         clearMatches();
+        spawnNewPieces();
     }
 
     // TODO: animation
@@ -49,6 +73,40 @@ public class Board
                 State[pos.x, pos.y] = null;
             }
         }
+    }
+
+    void spawnNewPieces ()
+    {
+        // assuming board dimensions are even
+        int lowerMid = BoardSideLength / 2, upperMid = lowerMid + 1;
+
+        List<Vector2Int> spawnLocations = new List<Vector2Int>
+        {
+            new Vector2Int(lowerMid, lowerMid),
+            new Vector2Int(lowerMid, upperMid),
+            new Vector2Int(upperMid, upperMid),
+            new Vector2Int(upperMid, lowerMid)
+        };
+
+        int firstSpawnIndex, diagonalIndex;
+        Vector2Int spawnOne, spawnTwo;
+
+        firstSpawnIndex = UnityEngine.Random.Range(0, spawnLocations.Count);
+        diagonalIndex = (firstSpawnIndex + 2) % 4;
+
+        spawnOne = spawnLocations[firstSpawnIndex];
+        spawnLocations.RemoveAt(Mathf.Min(firstSpawnIndex, diagonalIndex));
+        spawnLocations.RemoveAt(Mathf.Max(firstSpawnIndex, diagonalIndex));
+        spawnTwo = spawnLocations.PickRandom();
+
+        if (State[spawnOne.x, spawnOne.y] != null || State[spawnTwo.x, spawnTwo.y] != null)
+        {
+            // TODO: die
+            return;
+        }
+
+        State[spawnOne.x, spawnOne.y] = new Block(bagOne.GetNext());
+        State[spawnTwo.x, spawnTwo.y] = new Block(bagTwo.GetNext());
     }
 
     // TODO: animation
