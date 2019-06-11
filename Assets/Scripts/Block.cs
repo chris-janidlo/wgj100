@@ -16,5 +16,5 @@ public class Block
 
 public enum BlockType
 {
-    Gameplay, Art, Music, Story
+    Gameplay, Art, Music
 }

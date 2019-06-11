@@ -7,7 +7,7 @@ using crass;
 
 public class Board
 {
-    public const int BoardSideLength = 8;
+    public const int BoardSideLength = 12;
     public const int MinMatchingBlocks = 4;
 
     public UnityEvent StateChanged;
