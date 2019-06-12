@@ -46,9 +46,9 @@ public class TempBlockDrawer : MonoBehaviour
                         case BlockType.Music:
                             prefab = MusicBlockPrefab;
                             break;
-                        // case BlockType.Story:
-                        //     prefab = StoryBlockPrefab;
-                        //     break;
+                        case BlockType.Story:
+                            prefab = StoryBlockPrefab;
+                            break;
                     }
 
                     Instantiate(prefab).transform.SetParent(cell, false);

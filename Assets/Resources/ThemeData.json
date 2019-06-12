@@ -40,6 +40,13 @@
 			"IncreaseAmount2": 2
 		},
 		{
+			"Name": "fantasy",
+			"IncreaseType1": 2,
+			"IncreaseAmount1": 15,
+			"IncreaseType2": 1,
+			"IncreaseAmount2": 2
+		},
+		{
 			"Name": "cute",
 			"IncreaseType1": 0,
 			"IncreaseAmount1": 10,
@@ -68,7 +75,7 @@
 			"IncreaseAmount2": 4
 		},
 		{
-			"Name": "survivial",
+			"Name": "survival",
 			"IncreaseType1": 3,
 			"IncreaseAmount1": 15,
 			"IncreaseType2": 1,
