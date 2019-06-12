@@ -9,17 +9,31 @@ public class GenreBox : MonoBehaviour
 {
     public const int LargeIncreaseThreshold = 10;
 
+    [Header("UI References")]
     public TextMeshProUGUI Text;
     public RectTransform UpperContainer, LowerContainer;
+    public Button Button;
 
-    public Image ArtBlockPrefab, GameplayBlockPrefab, MusicBlockPrefab, StoryBlockPrefab;
-    public Image SmallIncreasePrefab, LargeIncreasePrefab;    
+    [Header("Prefabs")]
+    public Image ArtBlockPrefab;
+    public Image GameplayBlockPrefab, MusicBlockPrefab, StoryBlockPrefab;
+    public Image SmallIncreasePrefab, LargeIncreasePrefab;
+
+    ScoredGenre genre;
+
+    void Update ()
+    {
+        Button.interactable = genre != null && !CreationStats.Instance.SelectedRequirements.Contains(genre);
+    }
 
     public void SetGenreAndScore (ScoredGenre scoredGenre)
     {
-        Text.text = scoredGenre.Genre;
+        genre = scoredGenre;
+        Text.text = genre.Genre;
 
-        Genre genreData = ThemeData.Instance.GetGenre(scoredGenre.Genre);
+        Button.onClick.AddListener(() => CreationStats.Instance.SelectedRequirements.Add(genre));
+
+        Genre genreData = ThemeData.Instance.GetGenre(genre.Genre);
 
         Instantiate(getPrefab(genreData.IncreaseType1)).rectTransform.SetParent(UpperContainer, false);
         Instantiate(genreData.IncreaseAmount1 >= LargeIncreaseThreshold ? LargeIncreasePrefab : SmallIncreasePrefab).rectTransform.SetParent(UpperContainer, false);

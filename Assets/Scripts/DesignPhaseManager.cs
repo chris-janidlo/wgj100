@@ -6,7 +6,7 @@ using crass;
 
 public class DesignPhaseManager : MonoBehaviour
 {
-    public TextMeshProUGUI ThemeLabel, ThemeValue, NotationLabel;
+    public TextMeshProUGUI ThemeLabel, ThemeValue, NotationLabel, PlayButtonLabel;
     public List<GenreBox> GenreBoxes;
 
     public float ThemeLabelShowDelay, ThemeValueShowDelay, NotationLabelShowDelay, FirstGenreBoxShowDelay, OtherGenreBoxesShowDelay;
@@ -21,6 +21,7 @@ public class DesignPhaseManager : MonoBehaviour
         ThemeLabel.enabled = false;
         ThemeValue.enabled = false;
         NotationLabel.enabled = false;
+        PlayButtonLabel.enabled = false;
 
         foreach (var genre in GenreBoxes)
         {
@@ -47,5 +48,7 @@ public class DesignPhaseManager : MonoBehaviour
 
             yield return new WaitForSeconds(OtherGenreBoxesShowDelay);
         }
+
+        PlayButtonLabel.enabled = true;
     }
 }
