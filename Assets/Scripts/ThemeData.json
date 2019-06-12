@@ -1,0 +1,99 @@
+{
+	"Themes": [
+		{
+			"Name": "Chimera",
+			"GenresAndScores": [
+				{"Genre": "shooter", "Score": 1},
+				{"Genre": "scifi", "Score": 2},
+				{"Genre": "fantasy", "Score": 5},
+				{"Genre": "cute", "Score": 1},
+				{"Genre": "pet simulator", "Score": 5},
+				{"Genre": "beat em up", "Score": 1}
+			]
+		},
+		{
+			"Name": "Matryoshka Doll",
+			"GenresAndScores": [
+				{"Genre": "Russian", "Score": 4},
+				{"Genre": "survival", "Score": 3},
+				{"Genre": "recursive", "Score": 5},
+				{"Genre": "scifi", "Score": 1},
+				{"Genre": "horror", "Score": 3},
+				{"Genre": "sandbox", "Score": 1}
+			]
+		}
+	],
+
+	"Genres": [
+		{
+			"Name": "shooter",
+			"IncreaseType1": 0,
+			"IncreaseAmount1": 10,
+			"IncreaseType2": 1,
+			"IncreaseAmount2": 5
+		},
+		{
+			"Name": "scifi",
+			"IncreaseType1": 2,
+			"IncreaseAmount1": 15,
+			"IncreaseType2": 1,
+			"IncreaseAmount2": 2
+		},
+		{
+			"Name": "cute",
+			"IncreaseType1": 0,
+			"IncreaseAmount1": 10,
+			"IncreaseType2": 0,
+			"IncreaseAmount2": 0
+		},
+		{
+			"Name": "pet simulator",
+			"IncreaseType1": 1,
+			"IncreaseAmount1": 20,
+			"IncreaseType2": 0,
+			"IncreaseAmount2": 0
+		},
+		{
+			"Name": "beat em up",
+			"IncreaseType1": 1,
+			"IncreaseAmount1": 20,
+			"IncreaseType2": 3,
+			"IncreaseAmount2": 10
+		},
+		{
+			"Name": "Russian",
+			"IncreaseType1": 3,
+			"IncreaseAmount1": 20,
+			"IncreaseType2": 1,
+			"IncreaseAmount2": 4
+		},
+		{
+			"Name": "survivial",
+			"IncreaseType1": 3,
+			"IncreaseAmount1": 15,
+			"IncreaseType2": 1,
+			"IncreaseAmount2": 4
+		},
+		{
+			"Name": "recursive",
+			"IncreaseType1": 1,
+			"IncreaseAmount1": 10,
+			"IncreaseType2": 0,
+			"IncreaseAmount2": 0
+		},
+		{
+			"Name": "horror",
+			"IncreaseType1": 1,
+			"IncreaseAmount1": 20,
+			"IncreaseType2": 2,
+			"IncreaseAmount2": 10
+		},
+		{
+			"Name": "sandbox",
+			"IncreaseType1": 3,
+			"IncreaseAmount1": 20,
+			"IncreaseType2": 0,
+			"IncreaseAmount2": 0
+		}
+	]
+}
