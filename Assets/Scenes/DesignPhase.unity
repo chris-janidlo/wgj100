@@ -154,7 +154,7 @@ MonoBehaviour:
   - {fileID: 1069708596}
   ThemeLabelShowDelay: 0.5
   ThemeValueShowDelay: 1
-  NotationLabelShowDelay: 1
+  NotationLabelShowDelay: 2
   FirstGenreBoxShowDelay: 1
   OtherGenreBoxesShowDelay: 0.2
 --- !u!4 &101914195
@@ -387,7 +387,6 @@ GameObject:
   - component: {fileID: 477296477}
   - component: {fileID: 477296479}
   - component: {fileID: 477296483}
-  - component: {fileID: 477296482}
   - component: {fileID: 477296481}
   - component: {fileID: 477296478}
   - component: {fileID: 477296480}
@@ -608,26 +607,6 @@ MonoBehaviour:
       Size: 36
     AvoidRepeats: 0
   FontSwapTimeRange: {x: 1, y: 5}
---- !u!114 &477296482
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 477296476}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7855035002fbe014abce10eca10e8c28, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  VertWave:
-    Period: 1
-    Amplitude: 0
-    RandomStartPhaseRange: {x: 0, y: 0}
-  RotWave:
-    Period: 15
-    Amplitude: 1
-    RandomStartPhaseRange: {x: 0, y: 0}
 --- !u!114 &477296483
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1476,7 +1455,6 @@ GameObject:
   m_Component:
   - component: {fileID: 793963231}
   - component: {fileID: 793963234}
-  - component: {fileID: 793963235}
   - component: {fileID: 793963233}
   - component: {fileID: 793963232}
   m_Layer: 5
@@ -1655,26 +1633,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 793963230}
   m_CullTransparentMesh: 0
---- !u!114 &793963235
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 793963230}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7855035002fbe014abce10eca10e8c28, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  VertWave:
-    Period: 1
-    Amplitude: 0
-    RandomStartPhaseRange: {x: 0, y: 0}
-  RotWave:
-    Period: 15
-    Amplitude: 1
-    RandomStartPhaseRange: {x: 0, y: 0}
 --- !u!1 &814243541
 GameObject:
   m_ObjectHideFlags: 0
@@ -2510,7 +2468,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1159549911}
   - component: {fileID: 1159549915}
-  - component: {fileID: 1159549914}
   - component: {fileID: 1159549913}
   - component: {fileID: 1159549912}
   m_Layer: 5
@@ -2681,26 +2638,6 @@ MonoBehaviour:
       Size: 40
     AvoidRepeats: 0
   FontSwapTimeRange: {x: 1, y: 5}
---- !u!114 &1159549914
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1159549910}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7855035002fbe014abce10eca10e8c28, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  VertWave:
-    Period: 1
-    Amplitude: 0
-    RandomStartPhaseRange: {x: 0, y: 0}
-  RotWave:
-    Period: 12
-    Amplitude: 2
-    RandomStartPhaseRange: {x: 0, y: 100}
 --- !u!222 &1159549915
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2754,7 +2691,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1278829756}
   - component: {fileID: 1278829758}
-  - component: {fileID: 1278829759}
   - component: {fileID: 1278829760}
   - component: {fileID: 1278829757}
   m_Layer: 5
@@ -2907,26 +2843,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1278829755}
   m_CullTransparentMesh: 0
---- !u!114 &1278829759
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1278829755}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7855035002fbe014abce10eca10e8c28, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  VertWave:
-    Period: 9
-    Amplitude: 10
-    RandomStartPhaseRange: {x: 0, y: 100}
-  RotWave:
-    Period: 12
-    Amplitude: 2
-    RandomStartPhaseRange: {x: 0, y: 100}
 --- !u!114 &1278829760
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3338,7 +3254,6 @@ GameObject:
   - component: {fileID: 1523892014}
   - component: {fileID: 1523892016}
   - component: {fileID: 1523892020}
-  - component: {fileID: 1523892019}
   - component: {fileID: 1523892017}
   - component: {fileID: 1523892015}
   - component: {fileID: 1523892018}
@@ -3559,26 +3474,6 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &1523892019
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1523892013}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7855035002fbe014abce10eca10e8c28, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  VertWave:
-    Period: 1
-    Amplitude: 0
-    RandomStartPhaseRange: {x: 0, y: 0}
-  RotWave:
-    Period: 15
-    Amplitude: 1
-    RandomStartPhaseRange: {x: 0, y: 0}
 --- !u!114 &1523892020
 MonoBehaviour:
   m_ObjectHideFlags: 0

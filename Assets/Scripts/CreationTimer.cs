@@ -16,7 +16,7 @@ public class CreationTimer : MonoBehaviour
         LevelTime -= Time.deltaTime;
         if (LevelTime <= 0)
         {
-            SceneManager.LoadScene("PostCreation");
+            SceneManager.LoadScene(CreationStats.Instance.FinishedGame() ? "PostCreation" : "FailedCreation");
         }
     }
 }

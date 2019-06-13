@@ -160,6 +160,29 @@ public class CreationStats : Singleton<CreationStats>
         }
     }
 
+    public bool FinishedGame ()
+    {
+        return ArtBar.IsFilled && GameplayBar.IsFilled && MusicBar.IsFilled && StoryBar.IsFilled;
+    }
+
+    public float GetScore ()
+    {
+        float sum = 0;
+
+        for (int i = 0; i < SelectedRequirements.Count; i++)
+        {
+            float score = SelectedRequirements[i].Score;
+            
+            var bars = genreBars[i];
+            if (bars.Bar1.IsFilled && (bars.Bar2 == null || bars.Bar2.IsFilled))
+            {
+                sum += score;
+            }
+        }
+
+        return sum;
+    }
+
     BlockBar firstNonFullOptionalBar (BlockType type)
     {
         for (int i = 0; i < SelectedRequirements.Count; i++)
