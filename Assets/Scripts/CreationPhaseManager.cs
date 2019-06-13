@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MatchManager : MonoBehaviour
+public class CreationPhaseManager : MonoBehaviour
 {
     public Board Board { get; private set; }
 

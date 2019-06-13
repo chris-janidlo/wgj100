@@ -2515,7 +2515,7 @@ GameObject:
   - component: {fileID: 321654353}
   - component: {fileID: 321654352}
   m_Layer: 0
-  m_Name: MatchManager
+  m_Name: PhaseManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

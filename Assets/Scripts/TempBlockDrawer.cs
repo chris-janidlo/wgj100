@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class TempBlockDrawer : MonoBehaviour
 {
-    public MatchManager MatchManager;
+    public CreationPhaseManager MatchManager;
     public List<RectTransform> Cells;
     public Image ArtBlockPrefab, GameplayBlockPrefab, MusicBlockPrefab, StoryBlockPrefab;
 
