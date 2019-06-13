@@ -7,7 +7,6 @@ public class TempBlockDrawer : MonoBehaviour
 {
     public CreationPhaseManager MatchManager;
     public List<RectTransform> Cells;
-    public Image ArtBlockPrefab, GameplayBlockPrefab, MusicBlockPrefab, StoryBlockPrefab;
 
     Board board => MatchManager.Board;
 
@@ -33,23 +32,7 @@ public class TempBlockDrawer : MonoBehaviour
 
                 if (block != null)
                 {
-                    Image prefab = null;
-
-                    switch (block.Type)
-                    {
-                        case BlockType.Art:
-                            prefab = ArtBlockPrefab;
-                            break;
-                        case BlockType.Gameplay:
-                            prefab = GameplayBlockPrefab;
-                            break;
-                        case BlockType.Music:
-                            prefab = MusicBlockPrefab;
-                            break;
-                        case BlockType.Story:
-                            prefab = StoryBlockPrefab;
-                            break;
-                    }
+                    Image prefab = BlockPrefabRepo.Instance.GetPrefab(block.Type);
 
                     Instantiate(prefab).transform.SetParent(cell, false);
                 }

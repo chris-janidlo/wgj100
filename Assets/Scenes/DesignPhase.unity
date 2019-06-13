@@ -235,7 +235,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &298894600
 GameObject:
@@ -272,6 +272,75 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 16}
   m_SizeDelta: {x: 32, y: 32}
   m_Pivot: {x: 1, y: 0.5}
+--- !u!1001 &418968237
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1785060631463347541, guid: 4b3d223fe48c3464f84f4701e92f56f9,
+        type: 3}
+      propertyPath: m_Name
+      value: BlockPrefabRepo
+      objectReference: {fileID: 0}
+    - target: {fileID: 1785060631463347540, guid: 4b3d223fe48c3464f84f4701e92f56f9,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1785060631463347540, guid: 4b3d223fe48c3464f84f4701e92f56f9,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1785060631463347540, guid: 4b3d223fe48c3464f84f4701e92f56f9,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1785060631463347540, guid: 4b3d223fe48c3464f84f4701e92f56f9,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1785060631463347540, guid: 4b3d223fe48c3464f84f4701e92f56f9,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1785060631463347540, guid: 4b3d223fe48c3464f84f4701e92f56f9,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1785060631463347540, guid: 4b3d223fe48c3464f84f4701e92f56f9,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1785060631463347540, guid: 4b3d223fe48c3464f84f4701e92f56f9,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1785060631463347540, guid: 4b3d223fe48c3464f84f4701e92f56f9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1785060631463347540, guid: 4b3d223fe48c3464f84f4701e92f56f9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1785060631463347540, guid: 4b3d223fe48c3464f84f4701e92f56f9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4b3d223fe48c3464f84f4701e92f56f9, type: 3}
 --- !u!1 &426946336
 GameObject:
   m_ObjectHideFlags: 0
@@ -1912,14 +1981,6 @@ MonoBehaviour:
   UpperContainer: {fileID: 1115953917}
   LowerContainer: {fileID: 1221911571}
   Button: {fileID: 507868540}
-  ArtBlockPrefab: {fileID: 120712862745255811, guid: 542dfdfbc59e4bb47ac8b26ddb9b0875,
-    type: 3}
-  GameplayBlockPrefab: {fileID: 2898194141584181539, guid: 30dcf35e38a908c458e0e1d90db5ccd3,
-    type: 3}
-  MusicBlockPrefab: {fileID: 7171556669448476846, guid: a7d92ba88d930074d80cd743f39534a8,
-    type: 3}
-  StoryBlockPrefab: {fileID: 7874698355827428163, guid: f038487cceb04e943957614d99040ca9,
-    type: 3}
   SmallIncreasePrefab: {fileID: 1606172220481045831, guid: c464fcad4ff54b14d82bac2a2c686f22,
     type: 3}
   LargeIncreasePrefab: {fileID: 1881162602361810504, guid: 26f1e1fc51df9384eb56aaebc86fb57c,
@@ -2014,14 +2075,6 @@ MonoBehaviour:
   UpperContainer: {fileID: 2090000328}
   LowerContainer: {fileID: 426946337}
   Button: {fileID: 1505808867}
-  ArtBlockPrefab: {fileID: 120712862745255811, guid: 542dfdfbc59e4bb47ac8b26ddb9b0875,
-    type: 3}
-  GameplayBlockPrefab: {fileID: 2898194141584181539, guid: 30dcf35e38a908c458e0e1d90db5ccd3,
-    type: 3}
-  MusicBlockPrefab: {fileID: 7171556669448476846, guid: a7d92ba88d930074d80cd743f39534a8,
-    type: 3}
-  StoryBlockPrefab: {fileID: 7874698355827428163, guid: f038487cceb04e943957614d99040ca9,
-    type: 3}
   SmallIncreasePrefab: {fileID: 1606172220481045831, guid: c464fcad4ff54b14d82bac2a2c686f22,
     type: 3}
   LargeIncreasePrefab: {fileID: 1881162602361810504, guid: 26f1e1fc51df9384eb56aaebc86fb57c,
@@ -2081,14 +2134,6 @@ MonoBehaviour:
   UpperContainer: {fileID: 298894601}
   LowerContainer: {fileID: 714443674}
   Button: {fileID: 681685391}
-  ArtBlockPrefab: {fileID: 120712862745255811, guid: 542dfdfbc59e4bb47ac8b26ddb9b0875,
-    type: 3}
-  GameplayBlockPrefab: {fileID: 2898194141584181539, guid: 30dcf35e38a908c458e0e1d90db5ccd3,
-    type: 3}
-  MusicBlockPrefab: {fileID: 7171556669448476846, guid: a7d92ba88d930074d80cd743f39534a8,
-    type: 3}
-  StoryBlockPrefab: {fileID: 7874698355827428163, guid: f038487cceb04e943957614d99040ca9,
-    type: 3}
   SmallIncreasePrefab: {fileID: 1606172220481045831, guid: c464fcad4ff54b14d82bac2a2c686f22,
     type: 3}
   LargeIncreasePrefab: {fileID: 1881162602361810504, guid: 26f1e1fc51df9384eb56aaebc86fb57c,
@@ -2148,14 +2193,6 @@ MonoBehaviour:
   UpperContainer: {fileID: 892407983}
   LowerContainer: {fileID: 1854473294}
   Button: {fileID: 814243547}
-  ArtBlockPrefab: {fileID: 120712862745255811, guid: 542dfdfbc59e4bb47ac8b26ddb9b0875,
-    type: 3}
-  GameplayBlockPrefab: {fileID: 2898194141584181539, guid: 30dcf35e38a908c458e0e1d90db5ccd3,
-    type: 3}
-  MusicBlockPrefab: {fileID: 7171556669448476846, guid: a7d92ba88d930074d80cd743f39534a8,
-    type: 3}
-  StoryBlockPrefab: {fileID: 7874698355827428163, guid: f038487cceb04e943957614d99040ca9,
-    type: 3}
   SmallIncreasePrefab: {fileID: 1606172220481045831, guid: c464fcad4ff54b14d82bac2a2c686f22,
     type: 3}
   LargeIncreasePrefab: {fileID: 1881162602361810504, guid: 26f1e1fc51df9384eb56aaebc86fb57c,
@@ -2327,7 +2364,7 @@ RectTransform:
   - {fileID: 477296477}
   - {fileID: 1523892014}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2424,14 +2461,6 @@ MonoBehaviour:
   UpperContainer: {fileID: 1034344269}
   LowerContainer: {fileID: 521139916}
   Button: {fileID: 1820994125}
-  ArtBlockPrefab: {fileID: 120712862745255811, guid: 542dfdfbc59e4bb47ac8b26ddb9b0875,
-    type: 3}
-  GameplayBlockPrefab: {fileID: 2898194141584181539, guid: 30dcf35e38a908c458e0e1d90db5ccd3,
-    type: 3}
-  MusicBlockPrefab: {fileID: 7171556669448476846, guid: a7d92ba88d930074d80cd743f39534a8,
-    type: 3}
-  StoryBlockPrefab: {fileID: 7874698355827428163, guid: f038487cceb04e943957614d99040ca9,
-    type: 3}
   SmallIncreasePrefab: {fileID: 1606172220481045831, guid: c464fcad4ff54b14d82bac2a2c686f22,
     type: 3}
   LargeIncreasePrefab: {fileID: 1881162602361810504, guid: 26f1e1fc51df9384eb56aaebc86fb57c,
@@ -3939,14 +3968,6 @@ MonoBehaviour:
   UpperContainer: {fileID: 1001482289}
   LowerContainer: {fileID: 1019404169}
   Button: {fileID: 781632529}
-  ArtBlockPrefab: {fileID: 120712862745255811, guid: 542dfdfbc59e4bb47ac8b26ddb9b0875,
-    type: 3}
-  GameplayBlockPrefab: {fileID: 2898194141584181539, guid: 30dcf35e38a908c458e0e1d90db5ccd3,
-    type: 3}
-  MusicBlockPrefab: {fileID: 7171556669448476846, guid: a7d92ba88d930074d80cd743f39534a8,
-    type: 3}
-  StoryBlockPrefab: {fileID: 7874698355827428163, guid: f038487cceb04e943957614d99040ca9,
-    type: 3}
   SmallIncreasePrefab: {fileID: 1606172220481045831, guid: c464fcad4ff54b14d82bac2a2c686f22,
     type: 3}
   LargeIncreasePrefab: {fileID: 1881162602361810504, guid: 26f1e1fc51df9384eb56aaebc86fb57c,
