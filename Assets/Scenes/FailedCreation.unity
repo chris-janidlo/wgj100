@@ -854,6 +854,7 @@ MonoBehaviour:
   Texts:
   - {fileID: 1278829757}
   - {fileID: 384244363}
+  Scene: MainMenu
 --- !u!1001 &3339309453655444199
 PrefabInstance:
   m_ObjectHideFlags: 0

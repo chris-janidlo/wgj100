@@ -9,6 +9,7 @@ public class FailedCreationLoader : MonoBehaviour
 {
     public List<float> DelayTimes;
     public List<TextMeshProUGUI> Texts;
+    public string Scene;
 
     IEnumerator Start ()
     {
@@ -27,7 +28,7 @@ public class FailedCreationLoader : MonoBehaviour
         {
             if (Input.anyKey)
             {
-                SceneManager.LoadScene("MainMenu");
+                SceneManager.LoadScene(Scene);
             }
             yield return null;
         }

@@ -15,6 +15,8 @@ public class DesignPhaseManager : MonoBehaviour
 
     IEnumerator Start ()
     {
+        CreationStats.Instance.SelectedRequirements.Clear();
+    
         theme = ThemeData.Instance.Themes.PickRandom();
         ThemeValue.text = theme.Name;
     
