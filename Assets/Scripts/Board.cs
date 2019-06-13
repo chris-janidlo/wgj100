@@ -75,6 +75,10 @@ public class Board
     {
         foreach (var matchSet in getMatches())
         {
+            var pos1 = matchSet[0];
+            var type = State[pos1.x, pos1.y].Type;
+            CreationStats.Instance.CompleteBlock(type, matchSet.Count);
+            
             foreach (var pos in matchSet)
             {
                 State[pos.x, pos.y] = null;
